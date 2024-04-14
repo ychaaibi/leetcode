@@ -3,7 +3,7 @@ public:
     int ans;
     
     int get( int start, int end, int step, vector<int>& height )
-    {
+    {   
         stack<int> st;
         int        mx = -1, next_end=start;
         
