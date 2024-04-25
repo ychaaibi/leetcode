@@ -6,7 +6,6 @@ public:
         
         dp[s.back() - 'a'] = 1;
         
-        
         for ( int i=s.length() - 2; i>=0; i-- )
         {
             dp[s[i] - 'a']++;
