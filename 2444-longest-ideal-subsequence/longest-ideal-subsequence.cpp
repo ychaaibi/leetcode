@@ -12,7 +12,6 @@ public:
             for ( int c=max(int('a'), s[i] - k); c<=min(int('z'), s[i] + k); c++ )
                 dp[s[i] - 'a'] = max(dp[s[i] - 'a'], dp[c - 'a'] + 1 - (c == s[i]) );
         }
-        
     
         for ( int i=0; i<26; i++ )
             ans = max(ans, dp[i]);
