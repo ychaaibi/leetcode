@@ -9,6 +9,7 @@ public:
             for ( int b=0; b<32; b++ )
                 bits[b] += ( nums[i] >> b ) & 1;
 
+
         for ( int i=0; i<32; i++ )
         {
             if ( !bit_k[i] )
