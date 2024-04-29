@@ -1,24 +1,15 @@
 class Solution {
 public:
     int minOperations(vector<int>& nums, int k) {
-        vector<int> bits(32);
-        bitset<32>  bit_k(k);
-        int         ans = 0;
+        int         ans = 0, curr = 0;
 
         for ( int i=0; i<nums.size(); i++ )
-            for ( int b=0; b<32; b++ )
-                bits[b] += ( nums[i] >> b ) & 1;
+            curr ^= nums[i];
 
-
+        bitset<32>  bit_k(k), bit_curr(curr);
+        
         for ( int i=0; i<32; i++ )
-        {
-            if ( !bit_k[i] )
-                ans += ( bits[i] % 2 );
-            else if ( !bits[i] )
-                ans++;
-            else
-                ans += !( bits[i] % 2 );
-        }
+            ans += ( bit_k[i] != bit_curr[i] );
 
         return ( ans );
     }
