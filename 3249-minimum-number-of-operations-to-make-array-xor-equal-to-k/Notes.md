@@ -1,0 +1,1 @@
+<h2>minimum-number-of-operations-to-make-array-xor-equal-to-k Notes</h2><hr>[ Time taken: 7 m 11 s ]
