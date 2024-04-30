@@ -1,7 +1,7 @@
 class Solution {
 public:
     long long wonderfulSubstrings(string word) {
-        unordered_map<int, int>         hash;
+        vector<int>                     hash(1024, 0);
         int                             bits = 0;
         long long                       ans = 0;
 
@@ -27,7 +27,7 @@ public:
                 else
                     bits += ( 1 << b );
 
-                ans += ( ( hash.find(bits) != hash.end() ) ? hash[bits] : 0 );
+                ans += hash[bits];
 
                 bits = save;
             }
