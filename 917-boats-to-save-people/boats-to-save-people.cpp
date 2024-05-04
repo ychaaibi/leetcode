@@ -10,9 +10,10 @@ public:
         while ( p1 < p2 )
         {
             if ( people[p1] + people[p2] <= limit )
-                ans++, p1++, p2--;
+                p1++, p2--;
             else
-                ans++, p2--;
+                p2--;
+            ans++;
         }
 
 
