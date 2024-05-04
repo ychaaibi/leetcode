@@ -15,7 +15,7 @@ public:
                 p2--;
             ans++;
         }
-
+    
         return ( ans + (p1 == p2));
     }
 };
