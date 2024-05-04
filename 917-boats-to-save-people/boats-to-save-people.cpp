@@ -16,7 +16,6 @@ public:
             ans++;
         }
 
-
         return ( ans + (p1 == p2));
     }
 };
