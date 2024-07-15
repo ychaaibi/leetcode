@@ -12,20 +12,20 @@
 class Solution {
 public:
     TreeNode* createBinaryTree(vector<vector<int>>& des) {
-        unordered_set<int>                childs;
-        unordered_map<int,vector<int>>    tree;
+        // unordered_set<int>                  childs;
+        // unordered_map<int,vector<int>>      tree;
+        vector<bool>                        childs(1e5 + 1, false);
+        vector<vector<int>>                 tree(1e5 + 1);
+
         TreeNode                            *root;
 
         for ( int i=0; i<des.size(); i++ )
-            childs.insert(des[i][1]);
+            childs[des[i][1]] = true;
 
         for ( int i=0; i<des.size(); i++ )
         {
-            if ( childs.find(des[i][0]) == childs.end() )
+            if ( !childs[des[i][0]] )
                 root = new TreeNode(des[i][0]);
-
-            if ( tree.find(des[i][0]) == tree.end() )
-                tree[des[i][0]] = vector<int>();
 
             tree[des[i][0]].push_back( i );
         }
@@ -39,9 +39,6 @@ public:
             TreeNode *curr = q.front();
 
             q.pop();
-        
-            if ( tree.find(curr->val) == tree.end() )
-                continue ;
 
             for ( int i=0; i<tree[curr->val].size(); i++ )
             {
