@@ -14,7 +14,7 @@ public:
     TreeNode* createBinaryTree(vector<vector<int>>& des) {
         // unordered_set<int>                  childs;
         // unordered_map<int,vector<int>>      tree;
-        vector<bool>                        childs(1e5 + 1, false);
+        bitset<100001>                      childs;
         vector<vector<int>>                 tree(1e5 + 1);
 
         TreeNode                            *root;
