@@ -12,9 +12,9 @@
 class Solution {
 public:
     TreeNode* createBinaryTree(vector<vector<int>>& des) {
-        set<int>                childs;
-        map<int,vector<int>>    tree;
-        TreeNode                *root;
+        unordered_set<int>                childs;
+        unordered_map<int,vector<int>>    tree;
+        TreeNode                            *root;
 
         for ( int i=0; i<des.size(); i++ )
             childs.insert(des[i][1]);
