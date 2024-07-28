@@ -59,10 +59,6 @@ public:
             }
         }
 
-        // for ( int i=0; i<n; i++ )
-        //     cout << is_in_sp[i] << ", ";
-        // cout << endl; 
-
         vector<bool>    vis( n, false );
 
         pq.push( make_pair(0, 1) );
@@ -93,26 +89,13 @@ public:
             } 
         }
 
-        cout << ans << " " << is_in_sp[0] << endl;
-
-        // for ( int i=n - 1; i>=0; i-- )
-        // {
-        //     cout << "node " << i + 1 << endl;
-
-        //     for ( auto p : parent[i] )
-        //         cout << p + 1 << ", ";
-        //     cout << endl;
-        // }
-
         int _ans = 0;
 
         while ( --ans )
         {
-            cout << _ans << " " << change << " " << ( _ans / change ) << endl;
-
             if ( ( _ans / change ) % 2  )
                 _ans = _ans + ( change - (_ans % change) );
-            cout << "aftr " << _ans << endl;
+
             _ans += time;
         }
 
