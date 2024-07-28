@@ -6,7 +6,7 @@ public:
     NumArray(vector<int>& nums) {
         n = nums.size();
 
-        segTree.resize( 4 * n );
+        segTree.resize( 4 * n  );
 
         build( nums, 1, 0, n - 1 );
     }
@@ -61,7 +61,7 @@ public:
 
         if ( md >= t_left )
             ans += _sumRange( 2 * node, left, md, t_left, t_right );
-            
+
         if ( md + 1 <= t_right )
             ans += _sumRange( 2 * node + 1, md + 1, right, t_left, t_right);
 
