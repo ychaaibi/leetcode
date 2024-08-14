@@ -6,8 +6,10 @@ public:
 
         for ( int i=0; i<nums.size(); i++ )
         {
-            count_diff += upper_bound( nums.begin(), nums.end(), nums[i] + diff ) - lower_bound( nums.begin(), nums.end(), nums[i] + diff );
-            count_l_diff += upper_bound( nums.begin(), nums.end(), nums[i] + diff - 1) - ( nums.begin() + i + 1 );
+            auto low = lower_bound( nums.begin(), nums.end(), nums[i] + diff );
+            auto up = upper_bound( nums.begin(), nums.end(), nums[i] + diff );
+            count_diff += up - low;
+            count_l_diff += low - ( nums.begin() + i + 1 );
         }
 
         return ( make_pair(count_l_diff, count_diff) );
